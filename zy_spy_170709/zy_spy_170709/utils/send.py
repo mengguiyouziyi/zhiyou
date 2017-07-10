@@ -17,7 +17,7 @@ red = QueueRedis()
 
 def send_id():
 	# for id in range(1, 14300000):
-	for id in range(1, 1430):
+	for id in range(1, 10000):
 		red.send_to_queue('ids', id)
 		print(id)
 
