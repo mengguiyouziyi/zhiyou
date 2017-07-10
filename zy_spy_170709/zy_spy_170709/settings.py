@@ -42,6 +42,8 @@ RETRY_ENABLED = True
 RETRY_TIMES = 5
 RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 408, 429]
 
+HTTPERROR_ALLOWED_CODES = [400, 403, 429]
+
 DOWNLOAD_TIMEOUT = 60
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
