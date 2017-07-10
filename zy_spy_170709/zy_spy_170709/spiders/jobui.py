@@ -3,7 +3,7 @@ import scrapy
 import json
 import re
 from urllib.parse import urljoin
-from scrapy.exceptions import CloseSpider
+# from scrapy.exceptions import CloseSpider
 from zy_spy_170709.items import ZySpy170709Item
 from zy_spy_170709.utils.get import get_id
 
@@ -18,9 +18,10 @@ class JobuiSpider(scrapy.Spider):
 	def start_requests(self):
 		while True:
 			com_id = get_id()
+			print(com_id)
 			# com_id = 14270508
 			if not com_id:
-				raise CloseSpider('no company id')
+				continue
 			item = ZySpy170709Item()
 			item['com_id'] = com_id
 			self.url1 = self.com_url.format(com_id=com_id)

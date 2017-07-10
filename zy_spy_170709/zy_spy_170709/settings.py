@@ -120,11 +120,9 @@ USER_AGENT_CHOICES = [
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-	'scrapy.downloadermiddlewares.retry.RetryMiddleware': 80,
-	'zy_spy_170709.middlewares.ProxyMiddleware': 90,
-	'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+	'zy_spy_170709.middlewares.ProxyMiddleware': 1,
 	'zy_spy_170709.middlewares.RotateUserAgentMiddleware': 2,
-	'zy_spy_170709.middlewares.RetryMiddleware': 250,
+	'zy_spy_170709.middlewares.RetryMiddleware': 110,
 }
 
 # Enable or disable extensions
