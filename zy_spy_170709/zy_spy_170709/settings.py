@@ -40,7 +40,7 @@ LOG_LEVEL = 'INFO'
 
 RETRY_ENABLED = True
 RETRY_TIMES = 5
-RETRY_HTTP_CODES = [429, 500, 502, 503, 504, 400, 408]
+RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 408, 429]
 
 DOWNLOAD_TIMEOUT = 60
 
@@ -118,7 +118,9 @@ USER_AGENT_CHOICES = [
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-	'zy_spy_170709.middlewares.ProxyMiddleware': 1,
+	'scrapy.downloadermiddlewares.retry.RetryMiddleware': 80,
+	'zy_spy_170709.middlewares.ProxyMiddleware': 90,
+	'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 	'zy_spy_170709.middlewares.RotateUserAgentMiddleware': 2,
 }
 
