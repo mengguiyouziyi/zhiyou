@@ -18,7 +18,7 @@ class JobuiSpider(scrapy.Spider):
 	def start_requests(self):
 		while True:
 			com_id = get_id()
-			print(com_id)
+			# print(com_id)
 			# com_id = 14270508
 			if not com_id:
 				continue

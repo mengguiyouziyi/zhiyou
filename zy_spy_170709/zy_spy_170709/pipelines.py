@@ -27,4 +27,5 @@ class MysqlPipeline(object):
 			item["city"], item["com_tab"])
 		self.cursor.execute(sql, args=args)
 		self.conn.commit()
-		print(str(item['com_id']) + ' success')
+		# print(str(item['com_id']) + ' success')
+		print(str(item['com_id']))
