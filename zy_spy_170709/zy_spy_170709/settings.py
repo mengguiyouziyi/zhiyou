@@ -42,7 +42,7 @@ RETRY_ENABLED = True
 RETRY_TIMES = 5
 RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 408, 429]
 
-HTTPERROR_ALLOWED_CODES = [400, 403, 429]
+# HTTPERROR_ALLOWED_CODES = [429]
 
 DOWNLOAD_TIMEOUT = 60
 
@@ -124,6 +124,7 @@ DOWNLOADER_MIDDLEWARES = {
 	'zy_spy_170709.middlewares.ProxyMiddleware': 90,
 	'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 	'zy_spy_170709.middlewares.RotateUserAgentMiddleware': 2,
+	'zy_spy_170709.middlewares.RetryMiddleware': 250,
 }
 
 # Enable or disable extensions

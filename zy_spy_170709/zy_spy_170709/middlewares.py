@@ -46,13 +46,10 @@ class ProxyMiddleware(object):
 		request.headers["Proxy-Authorization"] = proxyAuth
 
 
-class RedirctMiddleware(object):
+class RetryMiddleware(object):
 	def process_response(self, request, response, spider):
-		if response.status == 302 or response.status == 429:
+		if response.status == 429:
 			# print('wrong status: %s, retrying~~' % response.status, request.url)
-			return request.replace(url=request.url)
-		elif "您操作太频繁,请稍后再访问" in response.text:
-			# print('too many retrys, retrying~~', request.meta['form_data'])
 			return request.replace(url=request.url)
 		else:
 			return response
