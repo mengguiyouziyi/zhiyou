@@ -64,6 +64,8 @@ class JobuiSpider(scrapy.Spider):
 		else:
 			com_url = ''
 		job_nums = response.xpath('//div[@class="middat cfix"]/a[2]/span/text()').extract_first()
+		if not job_nums:
+			job_nums = ''
 		job_num = job_nums if '///' not in job_nums else ''
 
 		item['com_name'] = com_name
