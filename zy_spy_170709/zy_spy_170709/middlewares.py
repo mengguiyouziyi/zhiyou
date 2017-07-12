@@ -16,24 +16,29 @@ proxyServer = "http://proxy.abuyun.com:9020"
 # proxyUser = "H4XGPM790E93518D"
 # proxyPass = "2835A47D56143D62"
 
+# 1
+proxyUser = "HJA1354AT829M77D"
+proxyPass = "F222C0D807890356"
 
-# proxyUser = "HJA1354AT829M77D"
-# proxyPass = "F222C0D807890356"
-
+# 2
 # proxyUser = "H8J738EHR4H5GE5D"
 # proxyPass = "3018672C5A167A3D"
 
+# 3
 # proxyUser = "HWAP93ES770B921D"
 # proxyPass = "FD67384CCCADBF04"
 
+# 4
 # proxyUser = "H24CFQ64JP06V1WD"
 # proxyPass = "FA1D98DF8F3E55FF"
-#
+
+# 5
 # proxyUser = "HQ78N3Y82239165D"
 # proxyPass = "AA99073C3271DBFA"
-#
-proxyUser = "H8963415MP59046D"
-proxyPass = "6C586451622880CB"
+
+# 6
+# proxyUser = "H8963415MP59046D"
+# proxyPass = "6C586451622880CB"
 
 
 # for Python3
@@ -53,6 +58,9 @@ class RetryMiddleware(object):
 			return request.replace(url=request.url)
 		else:
 			return response
+
+	def process_exception(self, request, exception, spider):
+		return request.replace(url=request.url)
 
 
 class RotateUserAgentMiddleware(object):
