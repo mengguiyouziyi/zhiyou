@@ -21,12 +21,12 @@ proxyServer = "http://proxy.abuyun.com:9020"
 # proxyPass = "F222C0D807890356"
 
 # 2
-proxyUser = "H8J738EHR4H5GE5D"
-proxyPass = "3018672C5A167A3D"
+# proxyUser = "H8J738EHR4H5GE5D"
+# proxyPass = "3018672C5A167A3D"
 
 # 3
-# proxyUser = "HWAP93ES770B921D"
-# proxyPass = "FD67384CCCADBF04"
+proxyUser = "HWAP93ES770B921D"
+proxyPass = "FD67384CCCADBF04"
 
 # 4
 # proxyUser = "H24CFQ64JP06V1WD"
