@@ -21,16 +21,16 @@ def send_key():
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			for result in results:
-				com_id = result['com_id']
-				com_name = result['com_name']
-				if not com_name:
-					continue
-				city_li = [city for city in citys if com_name.find(city) > 0]
-				if len(city_li) != 1:
-					continue
-				city = city_li[0]
-				sql1 = """replace into zy_all_city(com_id, com_name, city) VALUES (%s, %s, %s)"""
 				try:
+					com_id = result['com_id']
+					com_name = result['com_name']
+					if not com_name:
+						continue
+					city_li = [city for city in citys if com_name.find(city) > 0]
+					if len(city_li) != 1:
+						continue
+					city = city_li[0]
+					sql1 = """replace into zy_all_city(com_id, com_name, city) VALUES (%s, %s, %s)"""
 					cursor.execute(sql1, (com_id, com_name, city))
 					mysql.commit()
 				except Exception as e:
