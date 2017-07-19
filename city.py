@@ -23,6 +23,8 @@ def send_key():
 			for result in results:
 				com_id = result['com_id']
 				com_name = result['com_name']
+				if not com_name:
+					continue
 				city_li = [city for city in citys if com_name.find(city) > 0]
 				if len(city_li) != 1:
 					continue
