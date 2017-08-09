@@ -47,7 +47,7 @@ RETRY_HTTP_CODES = [500, 502, 503, 504, 400, 403, 408, 429]
 DOWNLOAD_TIMEOUT = 100
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 70
+CONCURRENT_REQUESTS = 200
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
