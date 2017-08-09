@@ -38,4 +38,6 @@ class JobuiSpider(scrapy.Spider):
 		item['heat'] = heat
 		item['crawl_time'] = datetime.now().strftime(SQL_DATETIME_FORMAT)
 
+		yield item
+
 
