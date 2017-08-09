@@ -24,3 +24,5 @@ class ZySpy170709Item(scrapy.Item):
     jobs = scrapy.Field()
     city = scrapy.Field()
     com_tab = scrapy.Field()
+
+    crawl_time = scrapy.Field()
