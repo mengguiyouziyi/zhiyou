@@ -21,8 +21,6 @@ class JobuiSpider(scrapy.Spider):
 			lis = com_id_name.split('~')
 			com_id = int(lis[0])
 			com_name = lis[1]
-			item['com_id'] = com_id
-			item['com_name'] = com_name
 			item = ZySpy170709Item()
 			item['com_id'] = com_id
 			item['com_name'] = com_name
