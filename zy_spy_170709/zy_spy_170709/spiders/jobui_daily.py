@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import time
 from datetime import datetime
 from zy_spy_170709.items import ZySpy170709Item
 from zy_spy_170709.utils.get import get_key
@@ -13,11 +14,11 @@ class JobuiSpider(scrapy.Spider):
 
 	def start_requests(self):
 		while True:
-			con_id_name = get_key('con_id_name')
-			if not con_id_name:
-				print('none')
+			com_id_name = get_key('com_id_name')
+			if not com_id_name:
+				time.sleep(120)
 				continue
-			lis = con_id_name.split('~')
+			lis = com_id_name.split('~')
 			com_id = int(lis[0])
 			com_name = lis[1]
 			item['com_id'] = com_id
