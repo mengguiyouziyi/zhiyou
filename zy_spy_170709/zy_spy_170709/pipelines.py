@@ -31,9 +31,8 @@ class MysqlPipeline(object):
 			print(str(item['com_id']))
 		elif spider.name == 'jobui_daily':
 			sql = """insert into zy_scan_num(com_id, com_name, heat, crawl_time) VALUES(%s, %s, %s, %s)"""
-			args = (
-				item["com_id"], item["com_name"], item["heat"], item["crawl_time"])
+			args = (item["com_id"], item["com_name"], item["heat"], item["crawl_time"])
 			self.cursor.execute(sql, args=args)
 			self.conn.commit()
 			# print(str(item['com_id']) + ' success')
-			print(str(item['com_id']))
+			# print(str(item['com_id']))

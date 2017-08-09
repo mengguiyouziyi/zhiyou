@@ -16,7 +16,7 @@ class JobuiSpider(scrapy.Spider):
 		while True:
 			com_id_name = get_key('com_id_name')
 			if not com_id_name:
-				time.sleep(120)
+				time.sleep(180)
 				continue
 			lis = com_id_name.split('~')
 			com_id = int(lis[0])
