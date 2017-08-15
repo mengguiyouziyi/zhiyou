@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import time
 from datetime import datetime
+from scrapy.exceptions import CloseSpider
 from zy_spy_170709.items import ZySpy170709Item
 from zy_spy_170709.utils.get import get_key
 from zy_spy_170709.settings import SQL_DATETIME_FORMAT
@@ -16,8 +16,7 @@ class JobuiSpider(scrapy.Spider):
 		while True:
 			com_id_name = get_key('com_id_name')
 			if not com_id_name:
-				time.sleep(180)
-				continue
+				raise CloseSpider('no datas')
 			lis = com_id_name.split('~')
 			com_id = int(lis[0])
 			com_name = lis[1]
