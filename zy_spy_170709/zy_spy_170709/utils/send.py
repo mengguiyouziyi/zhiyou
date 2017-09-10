@@ -21,7 +21,7 @@ def send_key(key):
 	try:
 		with mysql.cursor() as cursor:
 			sql = """select com_id, com_name from zy_daily ORDER BY com_id"""
-			print('begain')
+			# print('begain')
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			values = [str(i['com_id']) + '~' + i['com_name'].strip() for i in results]
@@ -35,13 +35,14 @@ def send_key(key):
 			# print(i+1)
 			red.send_to_queue(key, value)
 
-		print('done')
+		# print('done')
 
 
 if __name__ == '__main__':
-	while True:
-		send_key(key='com_id_name')
-		time.sleep(86400)
+	# while True:
+	# 	send_key(key='com_id_name')
+	# 	time.sleep(86400)
+	send_key(key='com_id_name')
 
 
 

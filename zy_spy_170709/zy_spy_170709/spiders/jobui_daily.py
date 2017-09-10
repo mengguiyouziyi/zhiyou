@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import time
 from datetime import datetime
 from scrapy.exceptions import CloseSpider
 from zy_spy_170709.items import ZySpy170709Item
@@ -13,10 +14,15 @@ class JobuiSpider(scrapy.Spider):
 	com_url = 'http://www.jobui.com/company/{com_id}/'
 
 	def start_requests(self):
+		x = 0
 		while True:
 			com_id_name = get_key('com_id_name')
 			if not com_id_name:
-				raise CloseSpider('no datas')
+				x += 1
+				if x > 5:
+					raise CloseSpider('no datas')
+				time.sleep(60)
+				continue
 			lis = com_id_name.split('~')
 			com_id = int(lis[0])
 			com_name = lis[1]

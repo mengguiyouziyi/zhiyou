@@ -50,12 +50,11 @@ class RetryMiddleware(object):
 	def process_response(self, request, response, spider):
 		if response.status == 429:
 			# print('wrong status: %s, retrying~~' % response.status, request.url)
-			return request.replace(url=request.url)
+			retryreq = request.copy()
+			retryreq.dont_filter = True
+			return retryreq
 		else:
 			return response
-
-	def process_exception(self, request, exception, spider):
-		return request.replace(url=request.url)
 
 
 class RotateUserAgentMiddleware(object):
