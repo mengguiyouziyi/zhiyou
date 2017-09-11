@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import pymysql
-import redis, time
-# from lagou import settings
+import redis
 
 import os
 import sys
