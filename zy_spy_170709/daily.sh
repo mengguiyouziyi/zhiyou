@@ -1,4 +1,6 @@
 #!/bin/bash
+. /etc/profile
+. ~/.bash_profile
 #set -u
 #set -x
 #sudo su - << EOF
