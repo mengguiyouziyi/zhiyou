@@ -1,5 +1,6 @@
-set -u
-set -x
+#!/bin/bash
+#set -u
+#set -x
 #sudo su - << EOF
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
@@ -13,7 +14,7 @@ echo your python version is : $U_V1.$U_V2.$U_V3 >> /data1/spider/menggui/zhiyou/
 cd /data1/spider/menggui/zhiyou/zy_spy_170709/
 
 nohup python /data1/spider/menggui/zhiyou/zy_spy_170709/zy_spy_170709/utils/send.py >>/data1/spider/menggui/zhiyou/zy_spy_170709/zy_spy_170709/utils/send.out 2>&1 &
-echo "aaa" >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
+echo "bbb" >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
 
 sleep 1m
 nohup python /data1/spider/menggui/zhiyou/zy_spy_170709/cmd.py >>/data1/spider/menggui/zhiyou/zy_spy_170709/daily_1.out 2>&1 &
