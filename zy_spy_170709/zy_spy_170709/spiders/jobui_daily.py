@@ -30,7 +30,7 @@ class JobuiSpider(scrapy.Spider):
 			item['com_id'] = com_id
 			item['com_name'] = com_name
 			self.url = self.com_url.format(com_id=com_id)
-			yield scrapy.Request(self.url, meta={'item': item, 'dont_redirect': True})
+			yield scrapy.Request(self.url, meta={'item': item})
 
 	def parse(self, response):
 		item = response.meta.get('item', '')

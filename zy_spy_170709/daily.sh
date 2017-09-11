@@ -1,5 +1,6 @@
 #!/bin/bash
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+echo "nihao"
 eval "$(pyenv init -)"
 pyenv activate env_ana3-4.3.0
 cd /data1/spider/menggui/zhiyou/zy_spy_170709/
