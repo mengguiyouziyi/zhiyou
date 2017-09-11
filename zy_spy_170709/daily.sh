@@ -4,6 +4,13 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 eval "$(pyenv init -)"
 pyenv activate env_ana3-4.3.0
+
+U_V1=`python -V 2>&1|awk '{print $2}'|awk -F '.' '{print $1}'`
+U_V2=`python -V 2>&1|awk '{print $2}'|awk -F '.' '{print $2}'`
+U_V3=`python -V 2>&1|awk '{print $2}'|awk -F '.' '{print $3}'`
+
+echo your python version is : $U_V1.$U_V2.$U_V3 >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
+
 #cd /data1/spider/menggui/zhiyou/zy_spy_170709/
 #echo "22222" >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
 
