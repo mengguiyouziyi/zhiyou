@@ -8,7 +8,7 @@ pyenv activate env_ana3-4.3.0
 #echo "22222" >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
 
 nohup python /data1/spider/menggui/zhiyou/zy_spy_170709/zy_spy_170709/utils/send.py >>/data1/spider/menggui/zhiyou/zy_spy_170709/zy_spy_170709/utils/send.out 2>&1 &
-#echo "33333" >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
+echo "33333" >> /data1/spider/menggui/zhiyou/zy_spy_170709/111.out
 
 sleep 1m
 nohup python /data1/spider/menggui/zhiyou/zy_spy_170709/cmd.py >>/data1/spider/menggui/zhiyou/zy_spy_170709/daily_1.out 2>&1 &
