@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import scrapy
+import pymysql
 import redis, time
 # from lagou import settings
 
