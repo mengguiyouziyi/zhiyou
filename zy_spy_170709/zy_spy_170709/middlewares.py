@@ -12,8 +12,8 @@ from random import choice
 proxyServer = "http://proxy.abuyun.com:9020"
 
 # 1
-proxyUser = "HJA1354AT829M77D"
-proxyPass = "F222C0D807890356"
+proxyUser = "H245O5ME0WV8J1RD"
+proxyPass = "10A78834CAAD6660"
 
 # 2
 # proxyUser = "H8J738EHR4H5GE5D"
