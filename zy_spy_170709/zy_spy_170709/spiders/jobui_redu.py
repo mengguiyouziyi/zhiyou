@@ -16,7 +16,8 @@ class JobuiSpider(scrapy.Spider):
 		burl = 'http://www.jobui.com/cmp?area={comp_name}'
 		x = 0
 		while True:
-			com_id_name = get_key('comp_id_name')
+			com_id_name = get_key('zhiyou_redu')
+			print(com_id_name)
 			if not com_id_name:
 				x += 1
 				if x > 5:
