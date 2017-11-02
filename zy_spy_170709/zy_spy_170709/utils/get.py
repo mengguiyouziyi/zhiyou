@@ -18,7 +18,6 @@ def get_key(key):
 	results = red.read_from_queue(key, 1)
 	if results:
 		result = results[0].decode().strip()
-		# print(result)
 		return result
 	else:
 		return 0

@@ -5,7 +5,7 @@ import re
 from scrapy import Selector
 from scrapy.exceptions import CloseSpider
 from zy_spy_170709.items import ZySpy170709Item
-from zy_spy_170709.utils.get import get_key
+from zy_spy_170709.utils.get_redu import get_key
 
 
 class JobuiSpider(scrapy.Spider):
