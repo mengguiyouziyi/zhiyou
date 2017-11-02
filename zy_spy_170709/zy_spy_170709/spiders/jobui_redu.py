@@ -67,7 +67,8 @@ class JobuiSpider(scrapy.Spider):
 			return
 		com_id = li.xpath('.//span[@class="fl"]/span[@class="admin-companyID"]/text()').extract_first()
 		job_num_str = li.xpath('.//div[@class="cmpInfoList"]/a[last()]/text()').extract_first()
-		job_num = re.search(r'\d+', job_num_str).group()
+		job_num_re = re.search(r'\d+', job_num_str) if job_num_str else ''
+		job_num = job_num_re.group() if job_num_re else ''
 		item['com_id'] = com_id
 		item['job_num'] = job_num
 		yield item
