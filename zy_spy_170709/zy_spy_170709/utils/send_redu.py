@@ -28,7 +28,7 @@ def send_key(key):
 	                        charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 	try:
 		with mysql.cursor() as cursor:
-			sql = """select com_id, com_name from gaoxin_qiyemingdan"""
+			sql = """select com_id, comp_name from gaoxin_qiyemingdan"""
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			values = [str(i['com_id']) + '~' + i['comp_name'].strip() for i in results]
