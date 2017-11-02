@@ -14,14 +14,12 @@ sys.path.append(father_path)
 
 def send_key(key):
 	"""
-		本机 localhost；公司 etl2.innotree.org；服务器 etl1.innotree.org
+	172.31.215.38
 	"""
 	mysql = pymysql.connect(host='etl1.innotree.org', port=3308, user='spider', password='spider', db='spider', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
-	# mysql = pymysql.Connect(host='localhost', user='root', password='3646287', db='spiders', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 	try:
 		with mysql.cursor() as cursor:
-			sql = """select com_id, com_name from zy_daily ORDER BY com_id"""
-			# print('begain')
+			sql = """select com_id, com_name from zy_daily"""
 			cursor.execute(sql)
 			results = cursor.fetchall()
 			values = [str(i['com_id']) + '~' + i['com_name'].strip() for i in results]

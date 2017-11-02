@@ -11,32 +11,9 @@ from random import choice
 # 代理服务器
 proxyServer = "http://proxy.abuyun.com:9020"
 
-# 1
-proxyUser = "H245O5ME0WV8J1RD"
-proxyPass = "10A78834CAAD6660"
+proxyUser = "HE5I6A6073H102ID"
+proxyPass = "HE5I6A6073H102ID"
 
-# 2
-# proxyUser = "H8J738EHR4H5GE5D"
-# proxyPass = "3018672C5A167A3D"
-
-# 3
-# proxyUser = "HWAP93ES770B921D"
-# proxyPass = "FD67384CCCADBF04"
-
-# 4
-# proxyUser = "H24CFQ64JP06V1WD"
-# proxyPass = "FA1D98DF8F3E55FF"
-
-# 5
-# proxyUser = "HQ78N3Y82239165D"
-# proxyPass = "AA99073C3271DBFA"
-
-# 6
-# proxyUser = "H8963415MP59046D"
-# proxyPass = "6C586451622880CB"
-
-
-# for Python3
 proxyAuth = "Basic " + base64.urlsafe_b64encode(bytes((proxyUser + ":" + proxyPass), "ascii")).decode("utf8")
 
 
@@ -69,6 +46,3 @@ class RotateUserAgentMiddleware(object):
 
 	def process_request(self, request, spider):
 		request.headers.setdefault('User-Agent', choice(self.agents))
-
-
-
