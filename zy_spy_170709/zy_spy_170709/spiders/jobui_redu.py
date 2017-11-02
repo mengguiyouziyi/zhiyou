@@ -43,6 +43,8 @@ class JobuiSpider(scrapy.Spider):
 			item = ZySpy170709Item()
 			# item['com_id'] = com_id
 			item['com_name'] = comp_name
+			item['com_id'] = ''
+			item['job_num'] = ''
 			url = burl.format(comp_name=comp_name)
 			yield scrapy.Request(url, meta={'item': item})
 
