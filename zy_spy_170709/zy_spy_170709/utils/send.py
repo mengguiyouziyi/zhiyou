@@ -16,7 +16,7 @@ def send_key(key):
 	"""
 	172.31.215.38
 	"""
-	mysql = pymysql.connect(host='etl1.innotree.org', port=3308, user='spider', password='spider', db='spider', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
+	mysql = pymysql.connect(host='172.31.215.38', port=3306, user='spider', password='spider', db='spider', charset='utf8', cursorclass=pymysql.cursors.DictCursor)
 	try:
 		with mysql.cursor() as cursor:
 			sql = """select com_id, com_name from zy_daily"""
