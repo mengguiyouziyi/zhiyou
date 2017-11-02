@@ -22,7 +22,7 @@ red = StrictRedisCluster(startup_nodes=startup_nodes, decode_responses=True)
 
 
 def get_key(key):
-	results = red.blpop(key, 1)
+	results = red.lpop(key, 1)
 	if results:
 		result = results[0].strip()
 		return result
