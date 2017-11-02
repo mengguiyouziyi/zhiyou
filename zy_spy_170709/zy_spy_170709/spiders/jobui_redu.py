@@ -57,7 +57,7 @@ class JobuiSpider(scrapy.Spider):
 		# 	return
 		select = Selector(text=response.text)
 		li_tags = select.xpath('//ul[@class="companyList"]/li[@class="atn-li"]/div[@class="atn-content"]')
-		if len(li_tags) < 0:
+		if len(li_tags) < 1:
 			yield item
 			return
 		li = li_tags[0]
