@@ -10,7 +10,6 @@ from zy_spy_170709.utils.get_redu import get_key
 
 class JobuiSpider(scrapy.Spider):
 	name = 'jobui_redu'
-	com_url = 'http://www.jobui.com/company/{com_id}/'
 
 	def start_requests(self):
 		burl = 'http://www.jobui.com/cmp?area={comp_name}'

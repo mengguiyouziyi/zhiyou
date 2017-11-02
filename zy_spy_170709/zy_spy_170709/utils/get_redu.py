@@ -28,3 +28,8 @@ def get_key(key):
 		return result
 	else:
 		return 0
+
+
+if __name__ == '__main__':
+	com_id_name = get_key('zhiyou_redu')
+	print(com_id_name)
