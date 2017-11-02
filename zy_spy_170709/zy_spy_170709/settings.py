@@ -64,14 +64,26 @@ COOKIES_ENABLED = False
 # TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
+# DEFAULT_REQUEST_HEADERS = {
+# 	'accept-encoding': "gzip, deflate",
+# 	'host': "www.jobui.com",
+# 	'referer': "http://www.jobui.com/company/12807107/salary/",
+# 	'Connection': "keep-alive",
+# 	# 'cache-control': "no-cache",
+# 	# 'postman-token': "33789359-432a-461b-0693-e1c6992dbdfb"
+# }
 DEFAULT_REQUEST_HEADERS = {
-	'accept-encoding': "gzip, deflate",
-	'host': "www.jobui.com",
-	'referer': "http://www.jobui.com/company/12807107/salary/",
-	'Connection': "keep-alive",
-	# 'cache-control': "no-cache",
-	# 'postman-token': "33789359-432a-461b-0693-e1c6992dbdfb"
-}
+    'x-devtools-emulate-network-conditions-client-id': "adc1172a-6ed6-47f4-83c6-b07f4bf88376",
+    'upgrade-insecure-requests': "1",
+    # 'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36",
+    'accept': "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+    'referer': "http://www.jobui.com/",
+    'accept-encoding': "gzip, deflate",
+    'accept-language': "zh-CN,zh;q=0.8",
+    # 'cookie': "jobui_p=1504770145227_61798168; __cfduid=d31724e0d59d443ac150d8bb723dba7681504770145; PHPSESSID=3jocir7tena45cre7ho0nddrn0; jobui_area=%25E5%258C%2597%25E4%25BA%25AC; jobui_seSun=1; Hm_lvt_8b3e2b14eff57d444737b5e71d065e72=1507811956,1509614174; Hm_lpvt_8b3e2b14eff57d444737b5e71d065e72=1509623963; TN_VisitCookie=33; TN_VisitNum=25",
+    'cache-control': "no-cache",
+    'postman-token': "d1d0899f-ab76-b23c-b438-2f32d2ec7fdb"
+    }
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
