@@ -4,8 +4,22 @@ import time
 import re
 from scrapy import Selector
 from scrapy.exceptions import CloseSpider
+from rediscluster import StrictRedisCluster
 from zy_spy_170709.items import ZySpy170709Item
-from zy_spy_170709.utils.get_redu import get_key
+
+# from zy_spy_170709.utils.get_redu import get_key
+
+startup_nodes = [{"host": "172.29.237.209", "port": "7000"},
+                 {"host": "172.29.237.209", "port": "7001"},
+                 {"host": "172.29.237.209", "port": "7002"},
+                 {"host": "172.29.237.214", "port": "7003"},
+                 {"host": "172.29.237.214", "port": "7004"},
+                 {"host": "172.29.237.214", "port": "7005"},
+                 {"host": "172.29.237.215", "port": "7006"},
+                 {"host": "172.29.237.215", "port": "7007"},
+                 {"host": "172.29.237.215", "port": "7008"}]
+
+red = StrictRedisCluster(startup_nodes=startup_nodes, decode_responses=True)
 
 
 class JobuiSpider(scrapy.Spider):
@@ -15,7 +29,7 @@ class JobuiSpider(scrapy.Spider):
 		burl = 'http://www.jobui.com/cmp?area={comp_name}'
 		x = 0
 		while True:
-			com_id_name = get_key('zhiyou_redu')
+			com_id_name = red.lpop('zhiyou_redu')
 			print(com_id_name)
 			if not com_id_name:
 				x += 1
